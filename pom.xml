@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion> <!-- Indica la versión del modelo POM de Maven. -->
+
+    <parent>
+        <groupId>org.springframework.boot</groupId> <!-- Grupo del parent POM para Spring Boot. -->
+        <artifactId>spring-boot-starter-parent</artifactId> <!-- Artefacto del parent POM. -->
+        <version>3.3.4</version> <!-- Versión del parent POM. -->
+        <relativePath/> <!-- Indica que Maven debe buscar el parent POM en el repositorio. -->
+    </parent>
+
+    <groupId>com.edteam</groupId> <!-- Grupo del proyecto. -->
+    <artifactId>curso</artifactId> <!-- Nombre del artefacto. -->
+    <version>0.0.1-SNAPSHOT</version> <!-- Versión del proyecto, indicando que está en desarrollo. -->
+    <name>curso</name> <!-- Nombre legible del proyecto. -->
+    <description>Demo project for Spring Boot</description> <!-- Descripción del proyecto. -->
+    <url/> <!-- URL del proyecto (puede ser útil para referenciar el proyecto). -->
+
+    <licenses>
+        <license/> <!-- Sección para definir licencias (vacía en este caso). -->
+    </licenses>
+
+    <developers>
+        <developer/> <!-- Sección para definir desarrolladores (vacía en este caso). -->
+    </developers>
+
+    <scm>
+        <connection/> <!-- Información sobre el control de versiones (vacía en este caso). -->
+        <developerConnection/> <!-- Información sobre la conexión de desarrollador (vacía en este caso). -->
+        <tag/> <!-- Etiqueta del SCM (vacía en este caso). -->
+        <url/> <!-- URL del SCM (vacía en este caso). -->
+    </scm>
+
+    <properties>
+        <java.version>22</java.version> <!-- Versión de Java utilizada en el proyecto. -->
+    </properties>
+
+    <dependencies>
+        <!-- Dependencias del proyecto. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId> <!-- Dependencia para crear aplicaciones web con Spring Boot. -->
+        </dependency>
+
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <scope>runtime</scope> <!-- La dependencia solo se necesita en tiempo de ejecución. -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope> <!-- Dependencia para pruebas unitarias y de integración. -->
+        </dependency>
+
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>javax.persistence-api</artifactId>
+            <version>2.2</version> <!-- API de JPA para la gestión de la persistencia. -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.17.0</version> <!-- Librería común para utilidades de Java. -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId> <!-- Dependencia para trabajar con JPA. -->
+        </dependency>
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version> <!-- Conector JDBC para MySQL. -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.hibernate.orm</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>6.5.3.Final</version> <!-- Núcleo de Hibernate para la ORM. -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope> <!-- Lombok se utiliza en tiempo de compilación, no en tiempo de ejecución. -->
+        </dependency>
+
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt</artifactId>
+            <version>0.9.1</version> <!-- Biblioteca para trabajar con JSON Web Tokens (JWT). -->
+        </dependency>
+
+        <dependency>
+            <groupId>de.mkammerer</groupId>
+            <artifactId>argon2-jvm</artifactId>
+            <version>2.5</version> <!-- Biblioteca para la generación de hashes con Argon2. -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.30</version> <!-- Dependencia para usar Spring MVC (componente web de Spring). -->
+        </dependency>
+
+        <!-- Dependencia duplicada -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.30</version> <!-- Esta dependencia se repite, se puede eliminar. -->
+        </dependency>
+
+        <!-- Spring AOT / Native -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.1.0</version> <!-- Otra dependencia para Spring Boot Starter Web. Puede causar conflictos por duplicación. -->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId> <!-- Plugin para facilitar la creación de aplicaciones Spring Boot. -->
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>22</source> <!-- Versión de Java para el código fuente. -->
+                    <target>22</target> <!-- Versión de Java para el bytecode. -->
+                    <compilerArgs>--enable-preview</compilerArgs> <!-- Habilita funciones de vista previa en Java 22. -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
